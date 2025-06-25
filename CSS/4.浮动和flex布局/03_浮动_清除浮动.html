@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清除浮动</title>
+    <style>
+        /* 
+        清除浮动
+        场景：浮动元素会脱标，如果父级没有高度，子级已经脱离标准流,子级无法撑开父级高度（可能导致页面布局错乱）
+        解决方法：清除浮动(清除浮动带来的影响)
+        1.额外标签法：
+        在父元素内容的最后添加一个块级元素，设置CSS属性clear:both
+
+        2.单伪元素法
+
+        3.双伪元素法（推荐）
+
+        4.overflow法
+        加这个属性浏览器会检查父级范围是多大，把超出父级范围的修剪掉（会检验父级的高）
+
+        拓展：浮动本质作用是实现图文混排效果
+        而现在基本采用flex布局，故浮动了解即可
+        */
+        .top {
+            margin:10px auto;
+            width: 1200px;
+            /* height: 300px; */
+            background-color: pink;
+            overflow: hidden;
+        }
+
+        .left {
+            float: left;
+            width: 200px;
+            height: 300px;
+            background-color: skyblue;
+        }
+
+        .right {
+            float:right;
+            width: 950px;
+            height: 300px;
+            background-color: orange;
+        }
+
+        .bottom {
+            height: 100px;
+            background-color: brown;
+        }
+
+        /* 额外标签法 */
+        /* .clearfix {
+            clear:both;
+        } */
+
+        /* 单伪元素法 */
+        /* .clearfix::after {
+            content: "";
+            display: block;
+            clear: both;
+        } */
+
+        /* before 解决外边距塌陷问题 */
+        /* 双伪元素法（推荐） */
+        /* .clearfix::before,
+        .clearfix::after {
+        content: "";
+        display: table;
+        }
+
+        .clearfix::after {
+        clear: both;
+        } */
+
+
+    </style>
+</head>
+<body>
+    <div class="top clearfix">
+        <div class="left"></div>
+        <div class="right"></div>
+        <!-- 额外标签法 -->
+        <!-- <div class="clearfix"></div> -->
+    </div>
+    <div class="bottom"></div>
+</body>
+</html>

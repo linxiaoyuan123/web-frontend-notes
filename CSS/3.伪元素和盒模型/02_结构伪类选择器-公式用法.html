@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>结构伪类选择器</title>
+    <style>
+        /* 
+        nth-child(公式)
+        作用：根据元素的结构关系查找多个元素。
+        偶数标签                2n
+        奇数标签                2n+1;2n-1
+        找到5的倍数的标签       5n
+        找到第5个以后的标签     n+5
+        找到第5个以前的标签     -n+5
+        */
+        /* 偶数 */
+        /* li:nth-child(2n) {
+            background-color: green;
+        } */
+
+        /* 奇数 */
+        /* li:nth-child(2n+1) {
+            background-color: green;
+        } */
+
+        /* 3的倍数标签 */
+        /* li:nth-child(3n) {
+            background-color: green;
+        } */
+
+        /* 3以后的标签 */
+        /* li:nth-child(n+3) {
+            background-color: green;
+        } */
+
+        /* 3以前的标签 */
+        li:nth-child(-n+3) {
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>li1</li>
+        <li>li2</li>
+        <li>li3</li>
+        <li>li4</li>
+        <li>li5</li>
+        <li>li6</li>
+        <li>li7</li>
+        <li>li8</li>
+        <li>li9</li>
+        <li>li10</li>
+    </ul>
+    
+</body>
+</html>

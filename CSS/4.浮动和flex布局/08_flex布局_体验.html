@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>flext布局</title>
+    <style>
+        /* 
+        flex布局（弹性布局），是浏览器提倡的布局模型，非常适合结构化布局，提供了强大的
+        空间分布和对齐能力。
+        flex布局不会产生浮动布局中的脱标现象，布局网页更简单、更灵活。
+        */
+        .box {
+            display: flex;
+            justify-content:space-between;
+            
+            height: 300px;
+            border: 1px solid #000;
+        }
+
+        .box div {
+            /* float: left;
+            margin: 50px; */
+
+            width: 200px;
+            height: 100px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+  </div>
+</body>
+</html>

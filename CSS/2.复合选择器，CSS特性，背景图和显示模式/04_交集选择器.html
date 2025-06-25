@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>交集选择器</title>
+    <style>
+        /* 
+        交集选择器（了解）
+        作用：选中同时满足多个条件的元素
+        语法：选择器1选择器2{CSS属性}，选择器之间连写，没有任何符号。
+        注意：如果交集选择器中有标签选择器，标签选择器必须书写在最前面。
+        */
+        p.box{
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p class="box">p标签带类box</p>
+    <p>p标签</p>
+    <div class="box">div标签带类box</div>
+</body>
+</html>

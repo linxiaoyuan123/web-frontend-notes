@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>input基本使用</title>
+</head>
+<body>
+  <!-- 特点：输入什么就显示什么 -->
+  文本框：<input type="text">
+  <br><br>
+  <!-- 特点：输入什么都是以 点 的形式显示 -->
+  密码框：<input type="password">
+  <br><br>
+  <!-- 
+  单选框：<input type="radio"> 
+  单选功能：用name属性赋相同的值，两者就只能选其一
+  默认选择用checked
+  -->
+   性别：
+   <input type="radio" name="gender" checked>男
+   <input type="radio" name="gender">女
+  <br><br>
+  多选框：<input type="checkbox">
+  <br><br>
+  <!-- 默认情况下只能上传单个文件，若想上传多个文件，可以添加multiple属性 -->
+  上传文件：<input type="file" multiple>
+</body>
+</html>

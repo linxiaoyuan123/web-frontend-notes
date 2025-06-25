@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>盒子阴影</title>
+  <style>
+    /* 
+    盒子阴影(拓展)
+    作用:给元素设置阴影效果
+    属性名:box-shadow
+    属性值:x轴偏移量 Y轴偏移量 模糊半径 扩散半径 颜色 内外阴影
+    注意:
+    x轴偏移量和Y轴偏移量必须书写
+    默认是外阴影,内阴影需要添加inset
+    */
+    div {
+      margin: 50px auto;
+      width: 200px;
+      height: 80px;
+      background-color: orange;
+
+      box-shadow: 2px 5px 10px 1px rgba(0,0,0,0.5) inset;
+    }
+  </style>
+</head>
+<body>
+  <div></div>
+</body>
+</html>

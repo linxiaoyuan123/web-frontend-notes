@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>flex布局-修改主轴方向</title>
+  <style>
+    /* 
+    修改主轴方向
+    主轴默认在水平方向，侧轴默认在垂直方向
+    属性名：flex-direction
+    属性值：
+    row             水平方向，自左向右（默认）
+    column          垂直方向，自上向下（记住）
+    row-reverse     水平方向，自右向左（了解）
+    column-reverse  垂直方向，自下向上（了解）
+    */
+
+    .box {
+      display: flex;
+
+      flex-direction:column;
+
+      justify-content:center;
+
+      align-items:center;
+
+      width: 150px;
+      height: 120px;
+      background-color: pink;
+    }
+
+    img {
+      width: 32px;
+      height: 32px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <img src="./images/1.png" alt="">
+    <span>媒体</span>
+  </div>
+</body>
+</html>

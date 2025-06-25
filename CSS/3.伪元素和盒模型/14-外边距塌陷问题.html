@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>外边距-塌陷问题</title>
+  <style>
+    /* 
+    坍塌问题
+    场景:父子级的标签,子级的添加 上外边距 会产生塌陷问题
+    现象:导致父级一起向下移动
+    解决办法:
+    1.取消子级margin,父级设置padding(推荐做法)
+    2.父级设置overflow:hidden
+    3.父级设置border-top
+
+    第二第三种方法本质上是让浏览器重新判定父级的起始坐标,发现错误
+    */
+    .father {
+      width: 300px;
+      height: 300px;
+      background-color: pink;
+      /* padding-top: 50px;
+      box-sizing: border-box; */
+
+      /* 溢出隐藏 */
+      /* overflow: hidden; */
+
+      border-top: 1px solid #000;
+    }
+
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+
+      margin-top: 50px;
+    }
+  </style>
+</head>
+<body>
+  <div class="father">
+    <div class="son">son</div>
+  </div>
+</body>
+</html>

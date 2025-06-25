@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>元素溢出</title>
+  <style>
+    /* 
+    元素溢出
+    作用:控制溢出元素的内容的显示方式
+    属性名:overflow
+    属性值
+    hidden    溢出隐藏
+    scroll    溢出滚动(无论是否溢出,都显示滚动条位置)
+    auto      溢出滚动(溢出才显示滚动条位置)
+    */
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+
+      overflow: hidden;
+
+      /* overflow: scroll; */
+
+      /* overflow: auto; */
+    }
+  </style>
+</head>
+<body>
+  <div>文字内容测试</div>
+</body>
+</html>

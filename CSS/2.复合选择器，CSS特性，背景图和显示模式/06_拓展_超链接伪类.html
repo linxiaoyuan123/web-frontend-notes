@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+       /* 超链接伪类选择器(了解) */
+       /* 选择器:link 访问前
+          选择器:visited 访问后
+          选择器:hover 鼠标悬停
+          选择器:active 点击时（鼠标按下）
+
+          注意：如果要给超链接设置以上四个状态，需要按照LVHA的顺序写
+       */
+       /* 
+       a:link{
+        color:red;
+       }
+       a:visited{
+        color:black;
+       }
+       a:hover{
+        color:blue;
+       }
+       a:active{
+        font-size:40px;
+       } 
+        */
+
+        /* 工作中，一个a标签选择器设置超链接的样式，hover状态特殊设置 */
+        a {
+            color:red;
+        }
+
+        a:hover{
+            color:blue;
+        }
+       
+    </style>
+</head>
+<body>
+    <a href="#">超链接a标签</a>
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* 开发中最好用后代关系来取用选择器，直接用标签选择器不易于后期添加内容 */
+        .banner {
+            width: 100%;
+            height: 500px;
+            background-color:#f3f3f4;
+            background-image: url(images/bk.png);
+            background-repeat: no-repeat;
+            background-position: left bottom;
+            text-align: right;
+            color:#333333;
+        }
+
+        .banner h1 {
+            height:100px;
+            font-size:36px;
+            line-height:100px;
+            font-weight:500;
+        }
+
+        .banner p {
+            font-size: 20px;
+        }
+
+        .banner a {
+            display: inline-block;
+            width: 120px;
+            height: 40px;
+            background-color: #f06b1f;
+            text-align: center;
+            line-height: 40px;
+            font-size:20px;
+            color: #ffffff;
+            text-decoration: none;
+        }
+        .banner a:hover {
+            color:pink;
+        }
+    </style>
+</head>
+<body>
+    <div class="banner">
+        <h1>让创造产生价值</h1>
+        <p>我们希望小游戏平台可以提供无限的可能性，让每一个创作者都可以将他们的才华和创意传递给用户</p>
+        <a href="#">我要报名</a>
+    </div>
+</body>
+</html>

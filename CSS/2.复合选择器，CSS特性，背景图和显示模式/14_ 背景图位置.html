@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>背景图位置</title>
+    <style>
+        /* 属性名：background-position(bgp) */
+        /* 属性值：水平方向位置 垂直方向位置 */
+        /* 属性值：两种写法
+        1.关键字 left right center top bottom
+        2.坐标（数字+px，正负皆可）
+        */
+        div {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+            background-image: url(./images/1.png);
+            background-repeat: no-repeat;
+            /* 水平：正数向右，负数向左
+               垂直：正数向下，负数向上
+            */
+            /* background-position: -50px 50px; */
+            /* background-position: 200px 200px; */
+            /* background-position: center bottom; */
+            /* background-position: 50px center; */
+
+            /* 
+            注意：
+            关键字取值方式写法，可以颠倒取值顺序
+            可以只写一个关键字，另一个方向默认为居中；数字只写一个值表示水平方向，垂直方向为居中
+            */
+            /* background-position: bottom right; */
+            /* background-position: bottom; */
+            background-position: 200px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>div标签</div>
+</body>
+</html>

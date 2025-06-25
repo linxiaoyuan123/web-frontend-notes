@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>浮动</title>
+    <style>
+        /* 
+        作用：让块元素水平排列
+        属性名：float
+        属性值：
+        left:左对齐   先后从左到右排序
+        right:右对齐
+        注意：
+        1.浮动元素会脱离标准流（脱标），即只给一个块元素加浮动，其他块元素会和浮动的块元素重叠
+        2.浮动的元素会一行显示多个
+        */
+        .one {
+            width: 100px;
+            height: 100px;
+            background-color: brown;
+
+            float: left;
+        }
+
+        .two {
+            width: 200px;
+            height: 200px;
+            background-color: orange;
+
+            /* float: left; */
+        }
+    </style>
+</head>
+<body>
+    <div class="one">one</div>
+    <div class="two">two</div>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emmet写法</title>
+    <style>
+        /* 
+        Emmet写法：代码的简写方式，输入缩写VSCode会自动生成对应的代码
+        HTML：
+        类选择器        <div class="box"></div>             标签名.类名
+        id选择器        <div id="box"></div>                标签名#id名
+        同级标签        <div></div><p></p>                  div+p
+        父子级标签      <div><p></p></div>                  div>p
+        多个相同标签    <div></div><div></div><div></div>   标签名*3
+        有内容的标签    <p>内容</p>                          p{内容}
+        
+        特殊：如果想创建带类名或id名的div，可以直接 .类名或#id名   TAB
+
+        CSS:大多数简写方式为属性单词的首字母
+        */
+        .box {
+            width: 500px;
+            height: 600px;
+            background-color: aqua;
+            width: 500px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+<body>
+    <p class="box"></p>
+    <div class="box"></div>
+    <div id="box"></div>
+    <p id="box"></p>
+
+    <div></div>
+    <p></p>
+
+    <div>
+        <p></p>
+    </div>
+
+    <div></div>
+    <div></div>
+    <div></div>
+
+    <p>内容</p>
+</body>
+</html>

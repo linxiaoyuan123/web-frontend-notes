@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>外边距-合并现象</title>
+  <style>
+    /* 
+    合并现象
+    场景:垂直排列的兄弟元素,上下margin会合并
+    现象:取两个margin中的较大值生效
+    故如果想让两个盒子上下距离100px,则只需要给其中一个盒子设置外边距即可
+    注意,两个左右盒子是不会有合并现象的
+    */
+    .one {
+      width: 100px;
+      height: 100px;
+      background-color: brown;
+      margin-bottom: 80px;
+      /* display: inline-block;
+      margin-right: 20px; */
+    }
+
+    .two {
+      width: 100px;
+      height: 100px;
+      background-color: orange;
+      margin-top: 50px;
+      /* display: inline-block;
+      margin-left:50px; */
+    }
+  </style>
+</head>
+<body>
+  <div class="one">one</div>
+  <div class="two">two</div>
+</body>
+</html>
