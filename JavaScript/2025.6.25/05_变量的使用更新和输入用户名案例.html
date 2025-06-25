@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 变量的更新 声明之后更新 直接变量赋值（不用再次声明再次声明会报错）
+        // 这里不用var声明是因为var的再次声明不报错
+        let a = 18
+        a = 19
+        // let a = 19
+        // 一次性声明多个变量,不鼓励这种写法,不具有可读性
+        // let age = 18, uname = '张三'
+        // console.log(a, uname)
+
+
+
+        //输入用户案例
+        //1.输入用户名
+        // prompt('请输入您的姓名')
+        //2.变量接收用户名
+        let uname = prompt('请输入您的姓名')
+        //3.网页输出用户名
+        console.log(uname)
+    </script>
+</body>
+</html>
