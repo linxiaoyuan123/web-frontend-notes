@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 50px;
+      height: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <script>
+    // 显示转换
+    /* 
+    1. Number() 强制转换为数字型
+    （若字符串中有非数字，转换失败会显示NaN即不是一个数字，而NaN也是number类型的数据，代表非数字）
+    2. parseInt() 强制转换为整数型
+    3. parseFloat() 强制转换为浮点型
+    */
+    let str = '123'
+    console.log(Number(str))
+    console.log(Number('pink'))
+    // let num = Number(prompt('输入年薪'))
+    // let num = +prompt('输入年薪')
+    // console.log(Number(num))
+    // console.log(num)
+    console.log(parseInt('12px')) //12
+    console.log(parseInt('12.34px')) //12
+    console.log(parseInt('12.94px')) // 12
+    // 若数字在中间，则parseInt和parseFloat取不过来，显示为NaN
+    console.log(parseInt('abc12.94px'))// NaN
+
+    // -------------------
+    console.log(parseFloat('12px')) // 12
+    console.log(parseFloat('12.34px')) // 12.34
+    console.log(parseFloat('12.94px')) // 12.94
+    console.log(parseFloat('abc12.94px')) // NaN
+  </script>
+</body>
+
+</html>

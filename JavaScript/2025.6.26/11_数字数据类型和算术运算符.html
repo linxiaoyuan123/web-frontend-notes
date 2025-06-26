@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+        /* 
+        数据类型（基本数据类型和引用数据类型）
+        基本数据类型：number数字型，string字符串型，boolean布尔型，undefined未定义型，null空类型
+        引用数据类型：object对象
+        */
+
+        // JS 弱数据类型语言 -- 只有赋值了，才知道是什么数据类型
+        let num = '张三'
+        // let num = 10
+        // java 强数据类型语言  int num = 10   看int即可知道是整型
+
+        // 算术运算符
+        // + - * / %
+        let a = 10
+        let b = 20
+        console.log(a + b)
+        console.log(a - b)
+        console.log(a * b)
+        console.log(a / b)
+        console.log(a % b)   //取余（取模）一般用于判定一个数值是否能被另一个数值整除
+
+        // NaN  Not a Number 代表计算错误，是一个不正确的或一个未定义的书写操作所得到的结果
+        console.log(a - num)
+        // NaN是粘性的，任何对NaN的操作都会返回NaN
+
+
+        // 案例：计算圆的面积
+        const PI = 3.14
+        let r = prompt("输入圆的半径r，计算面积：")
+        let area = PI * r * r
+        document.write(area)
+    </script>
+</body>
+</html>

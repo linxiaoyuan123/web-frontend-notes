@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // 使用表单、prompt获取过来的数据默认是字符串类型的，此时就不能直接简单的进行加法运算
+    // 隐式转换
+    // 规则：
+    // 1. + 号两边只要有一个是字符串，就会把另外一个转成字符串
+    // 2. 除了 + 以外的算术运算符 比如 - * / 等都会把数据转成数字类型
+    console.log(1 + 1)
+    console.log('pink' + 1)
+    console.log(2 + 2)
+    console.log(2 + '2') // 22
+    console.log(2 - 2)
+    console.log(2 - '2')  // 0  
+    console.log(+12)
+    // +号作为正好解析可以转换成数字型
+    console.log(+'123')  // 转换为数字型
+  </script>
+</body>
+
+</html>

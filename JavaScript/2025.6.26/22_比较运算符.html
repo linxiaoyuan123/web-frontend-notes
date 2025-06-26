@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+
+    // 比较运算符返回的是布尔型数据，值为true或false
+
+    console.log(3 > 5)
+    console.log(3 >= 3)
+    console.log(2 == 2)
+    // 比较运算符有隐式转换 把'2' 转换为 2  双等号 只判断值
+    console.log(2 == '2')  // true
+    // == 相等
+    // === 全等 判断 值 和 数据类型都一样才行
+
+    // 以后判断是否相等 请用 === 
+
+    // console.log(undefined == null) true
+    // console.log(undefined === null) false
+    // !=是判断是否相等    !==判断是否全等
+    console.log(2 === '2') // false
+
+    console.log(NaN === NaN) // NaN 不等于任何人，包括他自己
+
+
+    // 字符串比较，是比较的字符对应的ASCII码(了解)
+    // 从左到右依次比较，若第一位相同，则继续比较第二位，以此类推
+    console.log(2 !== '2')  // true  
+    console.log(2 != '2') // false 
+    console.log('-------------------------')
+    console.log('a' < 'b') // true
+    console.log('aa' < 'ab') // true
+    console.log('aa' < 'aac') // true
+    console.log('-------------------------')
+    // 尽量不要比较小数，因为小数有精度问题
+  </script>
+</body>
+
+</html>
