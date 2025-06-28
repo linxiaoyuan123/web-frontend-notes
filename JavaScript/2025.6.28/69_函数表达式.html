@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    函数分为具名函数和匿名函数
+    具名函数function fn() {}
+    匿名函数  function() {}
+
+    匿名函数有两种写法：1.函数表达式 2.立即执行函数
+
+    匿名函数的调用，必须写在函数表达式的下面，否则会报错
+
+    函数表达式就是，变量在声明时，同时将匿名函数赋值给该变量
+    之后调用该函数，只要用变量()即可调用
+
+    函数表达式和 具名函数的不同   function fn() {}
+      1. 具名函数的调用可以写到任何位置
+      2. 函数表达式，必须先声明函数表达式，后调用
+    */
+
+
+    // console.log(num)
+    // let num = 10
+
+    // 3 + 4
+    // num = 10
+    // 1. 函数表达式
+    fn(1, 2)  //错误
+    let fn = function (x, y) {
+      // console.log('我是函数表达式')
+      console.log(x + y)
+    }
+
+
+    // function fun() {
+    //   console.log(1)
+    // }
+    // fun()
+  </script>
+</body>
+
+</html>

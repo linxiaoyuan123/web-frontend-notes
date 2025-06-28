@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    转换为Boolean型
+    1. 只有 0 NaN null undefined '' 转换为布尔值为false，其余都为true
+    */
+
+
+    console.log(Boolean('pink'))
+    console.log(Boolean(''))
+    console.log(Boolean(0))
+    console.log(Boolean(90))
+    console.log(Boolean(-1))
+    console.log(Boolean(undefined))
+    console.log(Boolean(null))
+    console.log(Boolean(NaN))
+
+    console.log('--------------------------')
+    let age
+    if (age) {
+      console.log(11)
+    }
+
+    /* 
+    隐式转换：
+      1.有字符串的加法 "" + 1 , 结果是 "1"
+      2.减法 -（像大多数数学运算一样） 只能用于数字，它会使空字符串 "" 转换为 0
+      3.null 经过数字转换之后会变为0
+      4.undefined经过数字转换之后会变NaN
+    */
+  </script>
+</body>
+
+</html>

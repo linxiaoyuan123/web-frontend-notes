@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    一、对象：
+      1.对象是JS中的一种数据类型
+      2.可以理解为是一种无序的数据集合，注意数组是有序的数据集合
+      3.用来描述某个事物，例如一个人
+          人有姓名、年龄、性别等信息，还有吃饭睡觉玩游戏等功能
+    
+    二、对象的使用
+      1.对象的声明：（ {}是对象字面量 ）
+      let 对象名 = {}
+      let 对象名 = new Object()
+
+    三、对象的构成：
+      1.属性：信息或特征（名词）
+      2.方法：功能或行为（动词）
+
+      let 对象名 = {
+        属性名:属性值，
+        方法名:函数
+      }
+
+    注意：
+      1.属性名和属性值之间用英文:隔开
+      2.多个属性之间用英文的,隔开
+      3.属性就是依附在对象上的变量(外面是变量，对象内是属性)
+      4.属性名可以用""或'',一般情况下省略，除非名称遇到特殊符号，如空格、中横线等
+
+    四、对象的增删查改：
+      1.查：
+        1.对象名.属性名
+        2.对象名['属性名']
+      2.改：
+        对象名.属性名 = 值
+      3.增：
+        对象名.属性名 = 值
+      4.删：（了解）
+        delete 对象名.属性名
+    */
+
+
+    // 1.声明对象
+    // let pink = {
+    //   uname: 'pink老师',
+    //   age: 18,
+    //   gender: '女'
+    // }
+    // // console.log(pink)
+    // // console.log(typeof pink)
+
+    // // 改 把性别的女改为男
+    // pink.gender = '男'
+    // console.log(pink)
+
+    // // 增
+    // pink.hobby = '足球'
+    // console.log(pink)
+
+    // // 删 (了解)
+    // delete pink.age
+    // console.log(pink)
+    // // let num = 10
+    // num = 20
+    // console.log(num)
+
+    // 1. 声明
+    // console.log(window.name)
+    let obj = {
+      'goods-name': '小米10青春版',
+      num: '100012816024',
+      weight: '0.55kg',
+      address: '中国大陆'
+    }
+    obj['goods-name'] = '小米10 PLUS'
+    obj.color = '粉色'
+    console.log(obj)
+    // console.log(obj.name)
+    // console.log(obj.num)
+    // console.log(obj.weight)
+    // console.log(obj.address)
+    // console.log(obj.color)
+
+    // console.log(obj.goods - name) 错误，中横线会被拆开看成减号，所以我们需要用查的另一种方法
+
+    // 查的另外一种属性：
+    // 对象名['属性名']
+    console.log(obj['goods-name'])
+
+
+    // 查总结：
+    // (1) 对象名.属性名  obj.age
+    console.log(obj.num)
+    // (2) 对象名['属性名']  obj['age']
+    console.log(obj['num'])
+    console.log(obj['address'])
+
+
+
+
+
+    // // console.log(address)
+    // // 2. 使用属性 查  对象名.属性名
+    // console.log(obj.address)
+    // console.log(obj.name)
+
+
+  </script>
+</body>
+
+</html>

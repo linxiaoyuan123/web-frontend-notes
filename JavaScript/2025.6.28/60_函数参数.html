@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+
+  <script>
+    /* 
+      函数参数
+        声明语法：
+          function 函数名(参数列表) {
+            函数体
+          }
+
+        调用语法：
+          函数名(实参列表)
+
+      形参：声明函数时写在函数名右边小括号里的叫形参数
+      实参：调用函数时写在函数名右边小括号里的叫实参
+      形参可以理解为是在这函数内声明的变量，实参可以理解为是给这个变量赋值
+      开发中尽量保持形参和实参个数一致
+    */
+    
+
+    // 2. 求 1~100 累加和
+    // function getSum(end) {   // end = 50
+    //   // console.log(end)
+    //   let sum = 0
+    //   for (let i = 1; i <= end; i++) {
+    //     sum += i
+    //   }
+    //   console.log(sum)
+    // }
+    // getSum(50)  // 1~50
+    // getSum(100)  // 1~100
+
+    function getSum(start, end) {   // end = 50
+      // 形参  形式上的参数  
+      // console.log(end)
+      let sum = 0
+      for (let i = start; i <= end; i++) {
+        sum += i
+      }
+      console.log(sum)
+    }
+    getSum(1, 50)  // 调用的小括号里面 实参 - 实际的参数
+    getSum(100, 200)  // 实参 - 实际的参数
+  </script>
+</body>
+
+</html>

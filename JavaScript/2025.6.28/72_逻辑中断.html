@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    逻辑中断：
+    1. 当有多个表达式（值）时，左边的表达式值可以确定结果时，就不再继续运算右边的表达式值
+    2. 逻辑中断只发生在布尔值参与的表达式运算中
+
+    逻辑与&&
+      若两个都是真，则输出最后一个值
+      若第一个是假，则直接不再执行右边的表达式
+    逻辑或||
+      若两个都是真，则输出第一个值
+      若第一个是真，则直接不再执行右边的表达式
+
+    */
+
+    function fn(x, y) {
+      x = x || 0
+      y = y || 0
+      console.log(x + y)
+    }
+    fn(1, 2)
+    // fn()
+
+    // console.log(false && 22)
+    // console.log(false && 3 + 5)
+
+    // let age = 18
+    // console.log(false && age++) // age++ 不执行  一假则假
+    // console.log(age)
+
+    // console.log(true || age++) // age++ 不执行  一真则真
+    // console.log(age)
+
+
+    // console.log(11 && 22)  // 都是真，这返回最后一个真值
+    // console.log(11 || 22)  //  输出第一个真值
+  </script>
+</body>
+
+</html>
