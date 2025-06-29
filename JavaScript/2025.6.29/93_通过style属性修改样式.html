@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      /* background-color: pink; */
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box"></div>
+  <script>
+
+    /* 
+      操作元素样式属性(重要)
+        1.语法：对象.style.样式属性 = '值'  别忘了跟单位
+        2.多组单词的采取 小驼峰命名法 eg:CSS里写background-color的，js中写backgroundColor
+
+      因为页面里整一个body是唯一的，所以获取body元素可以用document.body
+    */
+
+    // 1. 获取元素
+    const box = document.querySelector('.box')
+    //2. 修改样式属性 对象.style.样式属性 = '值'  别忘了跟单位
+    box.style.width = '300px'
+    // 多组单词的采取 小驼峰命名法
+    //box.style.backgroundColor = 'hotpink'
+    box.style.border = '2px solid blue'
+    box.style.borderTop = '2px solid red'
+
+    //盒子刷新，盒子随机更换背景图片
+
+    // 1.封装一个获取随机数的函数
+    function getRandom(N,M) {
+      return Math.floor(Math.random() * (M - N) + 1) + N
+    }
+
+    // 2.获取随机数
+    const random = getRandom(1,6)
+
+    // 3.修改样式属性
+    box.style.backgroundImage = `url(./images/${random}.webp)`
+  </script>
+</body>
+
+</html>

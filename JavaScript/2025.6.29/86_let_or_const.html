@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+      变量声明：var、let和const（var直接pass）
+    
+      1.声明变量优先用const，若后面发现它需要被修改则再改为let
+
+      2.const声明的对象可以修改里面的值原因：
+        1)对象是引用类型，里面存储的是地址，只要地址不变，就不会报错
+        2)建议数组和对象使用const来声明
+
+      3.使用let声明变量的情况：
+        1)如果一个基本数据类型的值或者引用类型的地址发生变化时，需要用let
+        2)一个变量进行加减运算，如for循环中的 i++
+
+      4.使用const声明：
+        1)const声明的值不能改变，而且const声明变量的时候需要里面进行初始化
+        2)但对于引用数据类型，const声明的变量，里面存的不是值，而是地址
+    */
+    const arr = ['red', 'pink']
+    // arr.push('blue')
+    // console.log(arr)
+    
+    // arr = [1, 2, 4]
+    // console.log(arr)  // 错误
+  </script>
+</body>
+
+</html>

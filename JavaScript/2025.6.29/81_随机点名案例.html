@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 页面中随机点到数组中的一个名字，同时删除该名字
+        let arr = ['张三', '李四', '王五', '赵六', '钱七', '孙八', '周九']
+        // 1.得到一个随机数，作为数组的索引号，这个随机数为 0~6
+        let random = Math.floor(Math.random() * arr.length)
+        // 2.页面输出数组里的元素
+        document.write(arr[random])
+
+        // 3.splice(起始位置(下标), 删除几个元素)
+        arr.splice(random, 1)
+        console.log(arr)
+    </script>
+    
+</body>
+</html>

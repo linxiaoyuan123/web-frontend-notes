@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <img src="./images/1.webp" alt="">
+  <script>
+
+    /* 
+      还可以通过JS设置/修改标签元素属性，比如通过src更换图片
+      最常见的属性比如：href、title、src等
+      语法：对象.属性 = 值
+    */
+
+    // 1. 获取图片元素
+    const img = document.querySelector('img')
+    // 2. 修改图片对象的属性   对象.属性 = 值
+    img.src = './images/2.webp'
+    img.title = 'pink老师的艺术照'
+
+    //案例随机显示图片
+    const random = Math.floor(Math.random() * 7) + 1
+    img.src = `./images/${random}.webp`
+  </script>
+</body>
+
+</html>

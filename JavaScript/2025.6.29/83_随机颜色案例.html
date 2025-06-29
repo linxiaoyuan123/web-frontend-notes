@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            background-color: rgb(red, green, blue);
+        }
+    </style>
+</head>
+<body>
+    <script>
+
+        // 随机颜色案例
+
+        // 1.写一个随机数区间函数，形参为true时输出一个随机十六进制颜色，false则输出随机rgb的颜色
+        function getRandomColor(flag = true) {
+            if (flag === true) {
+                let str = '#'
+                let arr = ['0', '1', '2', '3', '4', '5', '6',
+                 '7', '8', '9', 'a', 'b', 'c', 'd', 'e', 'f']
+                
+                //利用for循环随机抽6次 累加到str里面
+                for(let i = 1; i <= 6; i++){
+                    let random = Math.floor(Math.random() * arr.length)
+                    str += arr[random]
+                }
+                return str
+                // return '#' + Math.floor(Math.random() * 16777215).toString(16)
+            } else {
+                let r = Math.floor(Math.random() * 256 )
+                let g = Math.floor(Math.random() * 256 )
+                let b = Math.floor(Math.random() * 256 )
+                return `rgb(${r},${g},${b})`
+                // return 'rgb(' + Math.floor(Math.random() * 256 ) + ',' + Math.floor(Math.random() * 256 ) + ',' + Math.floor(Math.random() * 256 ) + ')'
+            }
+        }
+
+        document.write(`
+            <div style="width:200px;height:200px;background-color:${getRandomColor(true)};">
+            123456    
+            </div>
+            <div style="width:200px;height:200px;background-color:${getRandomColor(false)};">
+            123456    
+            </div>
+        `)
+
+    </script>
+</body>
+</html>

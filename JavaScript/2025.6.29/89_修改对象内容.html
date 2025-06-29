@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div class="box">我是文字的内容</div>
+  <script>
+
+    /* 
+      设置/修改DOM元素内容的两种方法：
+        1. 元素.innerText  不解析标签  显示纯文本
+        2. 元素.innerHTML  解析标签(用法2即可)
+    */
+
+    // 1. 获取元素
+    const box = document.querySelector('.box')
+
+    // 2. 修改文字内容  对象.innerText 属性
+    //    显示纯文本，不解析标签
+    console.log(box.innerText)  // 获取文字内容
+    //box.innerText = '我是一个盒子'  // 修改文字内容
+    //box.innerText = '<strong>我是一个盒子</strong>'  // 不解析标签
+
+    // 3. innerHTML 解析标签
+    console.log(box.innerHTML)
+    // box.innerHTML = '我要更换'
+    box.innerHTML = '<strong>我要更换</strong>'
+  </script>
+</body>
+
+</html>

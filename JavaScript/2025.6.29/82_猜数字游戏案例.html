@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 猜数字游戏案例
+        
+        // 1.程序随机生成1~10之间的数字
+        function getRandom(N, M){
+            return Math.floor(Math.random() * (M - N) + 1) + N
+        }
+        let random = getRandom(1, 10)
+
+        // 用户输三次，三次没对则退出
+        let flag = true  // 开关变量
+        for(let i = 1; i<=3; i++) {
+            // 2.用户输入数字
+            let user = +prompt('请输入1~10之间的数字来猜数字:')
+
+            // 3.判断用户输入的数字和生成的随机数之间的关系
+            if (user > random) {
+                alert('您输入的数字大了,继续')
+            } else if (user < random) {
+                alert('您输入的数字小了,继续')
+            } else {
+                flag = false
+                alert('恭喜您猜对了')
+                break
+            }
+        }
+        if(flag){
+            alert("次数已用完")
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+    1.术语解释
+
+      关键字            在js中有特殊意义的词汇            let、var、function、if、else等
+
+      保留字            在目前js没意义，但未来可能有意义   int、short、long、char
+
+      标识(标识符)      变量名、函数名的另一种叫法          无
+
+      表达式            能产生值的代码，一般配合运算符出现   10 + 3 、 age >= 18
+
+      语句              一段可以执行的代码                 if() for()
+
+    2.数据类型
+      基本数据类型(简单数据类型，值类型)
+        1)在存储时变量中存储的是值本身，因此叫做值类型
+          eg：string，number，boolean，undefine的，null
+
+      引用数据类型(复杂类型，引用类型)
+        1)在存储时变量中存储的仅仅是地址(引用),因此叫做引用数据类型
+          eg：object，function，array等
+
+    3.堆栈空间分配区别：
+      栈(操作系统)：由操作系统自动分配释放存放函数的参数值、局部变量的值等
+        简单数据类型存放在栈里面
+
+      堆(操作系统)：存储复杂类型(对象),一般由程序员分配释放，若程序员不释放，由垃圾回收机制回收
+        引用数据类型存放在堆里面
+
+    */
+
+
+    let num1 = 10
+    let num2 = num1
+    num2 = 20
+    console.log(num1) // 结果是 10
+
+
+    let obj1 = {
+      age: 18
+    }
+    let obj2 = obj1
+    // 修改属性
+    obj2.age = 20
+    console.log(obj1.age) // 20
+  </script>
+</body>
+
+</html>
