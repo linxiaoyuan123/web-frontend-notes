@@ -1,5 +1,47 @@
 # JavaScript笔记
 
+#### 67_作用域(重要)
+
+```js
+<script>
+    /* 
+      作用域：变量起作用的范围
+        1. 全局变量
+        2. 局部变量(函数变量，函数作用域)
+
+      函数的访问原则：在能够访问到的情况下 先局部，局部没有再找全局
+
+    */
+
+    let num = 10  // 1. 全局变量
+
+    console.log(num)
+    function fn() {
+      //局部作用域中没有重新声明num，而是直接赋值
+      //此时赋值操作会沿着作用域链向上查找，最终修改全局变量num
+      num = 20
+    }
+    fn()
+    console.log(num)
+
+    // 2. 局部变量
+    function fun() {
+      //局部重新声明了num，只在num中有效
+      //相当在函数作用域里创建了一个新的局部变量num，此时与全局变量num无关
+      let num = 100  
+      console.log(num)
+      //局部声明了个str
+      let str = '老王'
+    }
+    fun()
+    console.log(num)
+    //局部声明的str只能在局部中生效
+    console.log(str)  // 错误
+  </script>
+```
+
+
+
 #### 79_数学内置对象Math
 
 ```js
@@ -112,7 +154,7 @@
   </script>
 ```
 
-![图1](D:\学习\study_everyday\assets\JavaScript_note\image-20250629182907674.png)
+![图1](./note_pic/image-20250629182907674.png)
 
 ```js
 <script>
@@ -124,7 +166,7 @@
 </script>
 ```
 
-![image-20250629183020390](D:\学习\study_everyday\assets\JavaScript_note\image-20250629183020390.png)
+![image-20250629183020390](./note_pic/image-20250629183020390.png)
 
 ```js
 <script>
@@ -139,7 +181,7 @@
 </script>
 ```
 
-![image-20250629183047226](D:\学习\study_everyday\assets\JavaScript_note\image-20250629183047226.png)
+![image-20250629183047226](./note_pic/image-20250629183047226.png)
 
 
 
@@ -177,11 +219,11 @@
 
 1.eg1不报错的原因:
 
-![image-20250629190201242](D:\学习\study_everyday\assets\JavaScript_note\image-20250629190201242.png)
+![image-20250629190201242](./note_pic/image-20250629190201242.png)
 
 2.eg2报错的原因:
 
-![image-20250629190223539](D:\学习\study_everyday\assets\JavaScript_note\image-20250629190223539.png)
+![image-20250629190223539](./note_pic/image-20250629190223539.png)
 
 
 
@@ -406,5 +448,397 @@
 </body>
 
 </html>
+```
+
+
+
+#### 95_通过类名修改样式(了解，基本用clssList)
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .nav {
+      color: red;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: skyblue;
+      margin: 100px auto;
+      padding: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">123</div>
+  <script>
+
+    /* 
+    使用场景：如果修改的样式比较多，直接通过style属性修改比较繁琐，可以通过借助于CSS类名的形式。
+    */
+
+
+    // 1. 获取元素
+    const div = document.querySelector('div')
+    // 2.添加类名  class 是个关键字 我们用 className
+    // 注意：使用className赋值会覆盖以前的类名
+    div.className = 'nav box'
+    
+  </script>
+</body>
+
+</html>
+```
+
+
+
+#### 96_通过classList修改样式
+
+```js
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 200px;
+      height: 200px;
+      color: #333;
+    }
+
+    .active {
+      color: red;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="box active">文字</div>
+  <script>
+    // 通过classList添加
+
+    /* 
+      通过classList操作类控制CSS(以后用这种即可)
+        使用场景：为了解决className容易覆盖以前的类名，我们可以通过classList方式追加和删除类名
+    */
+
+
+    // 1. 获取元素
+    const box = document.querySelector('.box')
+    // 2. 修改样式
+    // 2.1 追加类 add() 类名不加点，并且是字符串
+    // box.classList.add('active')
+ 
+    // 2.2 删除类  remove() 类名不加点，并且是字符串
+    // box.classList.remove('box')
+
+    // 2.3 切换类  toggle()  有还是没有， 有就删掉，没有就加上
+    box.classList.toggle('active')
+
+  </script>
+</body>
+
+</html>
+```
+
+
+
+#### 98_修改表单属性
+
+```js
+<body>
+  <!-- <input type="text" value="电脑"> -->
+  <input type="checkbox" name="" id="">
+  <button>点击</button>
+  <script>
+
+    /* 
+      操作表单元素 属性
+        1.使用场景：表单很多情况，也需要修改属性，比如点击眼睛，可以看到密码，本质是把表单类型转换为文本框
+        
+        2.获取：DOM对象.属性名
+
+        3.设置：DOM对象.属性名 = 新值
+
+        4.表单属性中添加就有效果，移除就没有效果，一律使用布尔值表示，如果true，则添加该属性，如果false则移除
+        eg：disabled，checked，selected
+    */
+
+    // 1 获取元素
+    // const uname = document.querySelector('input')
+
+    // 2. 获取值  获取表单里面的值 用的  表单.value           (重要)
+    // console.log(uname.value) // 电脑
+    // console.log(uname.innerHTML)  innertHTML 得不到表单的内容
+
+    // 3. 设置表单的值
+    // uname.value = '我要买电脑'
+    // console.log(uname.type)
+    // uname.type = 'password'
+
+    // 1. 获取
+    const ipt = document.querySelector('input')
+    // console.log(ipt.checked)  // false   只接受布尔值
+    ipt.checked = true
+    // ipt.checked = 'true'  // 会选中，不提倡  有隐式转换
+
+    // 1.获取
+    const button = document.querySelector('button')
+    // console.log(button.disabled)  // 默认false 不禁用
+    button.disabled = true   // 禁用按钮
+
+  </script>
+</body>
+```
+
+
+
+#### 99_自定义属性(重要)
+
+```js
+<body>
+  <div data-id="1" data-spm="不知道">1</div>
+  <div data-id="2">2</div>
+  <div data-id="3">3</div>
+  <div data-id="4">4</div>
+  <div data-id="5">5</div>
+  <script>
+
+    /* 
+      1.标准属性：标签天生自带的属性，例class、id、title等，
+        可以直接使用点语法操作 如：disabled、checked等
+
+      2.自定义属性：
+        1)在html5中推出来了专门的data-自定义属性
+        2)在标签上一律以data-开头
+        3)在DOM对象上一律以dataset对象方式获取
+    */
+
+    const one = document.querySelector('div')
+    console.log(one.dataset.id)  // 1
+    console.log(one.dataset.spm)  // 不知道
+  </script>
+</body>
+```
+
+
+
+#### 100_定时器-间歇函数
+
+```js
+<script>
+    
+    /* 
+      定时器-间歇函数
+      1.语法：
+        1)开启定时器：
+          setInterval(函数, 间隔时间)
+          函数：要执行的函数，函数名
+          间隔时间：单位是毫秒，1000毫秒=1秒
+
+        2)关闭定时器：
+          let 变量名 = setInterval(函数, 间隔时间)
+          clearInterval(变量名)
+
+      2.作用：
+        可以按照指定的时间间隔，循环执行函数
+
+      3.返回值：(每个定时器都是独一无二的)
+        定时器的编号，是一个数字，从1开始递增，每次增加1
+        可以通过定时器编号来关闭定时器
+        关闭定时器：clearInterval(定时器编号)
+
+      4.注意：
+        1)定时器是异步执行的，会在定时器指定的时间间隔之后才执行
+        (意思我设置1秒，刚打开页面，1秒之后才会开始调用函数，之后重复)
+        2)定时器的时间间隔是按照指定的时间间隔来执行的，不一定准确
+
+      5.作用：
+        可以根据时间自动重复执行某些代码
+      
+    */
+
+    //setInterval(函数, 间隔时间) 第一个参数是函数名，函数()的意思是函数调用
+
+    // setInterval(function(){
+    //   console.log('一秒执行一次')
+    // }, 1000)
+
+    function fn() {
+      console.log('一秒执行一次')
+    }
+
+    setInterval(fn, 1000)
+    //若想加小括号，那么就加引号(只作了解，不使用)
+    //setInterval('fn()', 1000)
+
+    // 定时器编号(用let声明是因为后面利用鼠标悬停关闭定时器，
+    // 之后想让定时器重新动起来值会被赋新值，会变)
+    let num = setInterval(function(){
+      console.log('2秒执行一次')
+    }, 2000)
+    console.log(num)
+    // 关闭定时器
+    clearInterval(num)
+ 
+
+    /* 
+      变量和定时器的一些用法 
+    */
+
+    let i = 1
+    setInterval(function() {
+      i++
+      document.write(`${i} `)
+    }, 100)
+
+  </script>
+```
+
+
+
+#### 104_事件监听
+
+```js
+<body>
+  <button>点击</button>
+  <script>
+
+    /* 
+      事件监听：
+        1.语法:
+          元素对象.addEventListener('事件类型', 要执行的函数)
+        
+        2.事件监听三要素:
+          1)事件源: 哪个dom元素被事件触发了，要获取dom元素
+          2)事件类型: 用什么方式触发，比如鼠标单击click、鼠标经过mouseover等
+          3)事件处理程序: 要做什么事
+
+        3.定义：
+          就是让程序检测是否有事件产生，一旦有事件触发，
+          就立即调用一个函数做出响应，简称 注册事件
+      
+      解惑：
+        每触发一次事件，就会调用一次函数
+        而如果局部函数里面有const声明的变量，那不就相当给const变量重新赋值了嘛？不应该报错嘛？
+          -> 没有报错是因为JS中有着垃圾回收机制，在执行完函数后，会自动回收函数中的变量(相当把局部里面const声明的变量删了)
+    */
+
+    // 需求： 点击了按钮，弹出一个对话框
+    // 1. 事件源   按钮  
+    // 2. 事件类型 点击鼠标   click 字符串
+    // 3. 事件处理程序 弹出对话框
+    
+    //获取button对象
+    const btn = document.querySelector('button')
+
+    btn.addEventListener('click', function(){
+      alert('你好')
+    })
+
+  </script>
+</body>
+```
+
+
+
+#### 107_事件监听方法(了解)
+
+```js
+<body>
+  <button>点击</button>
+  <script>
+
+    /* 
+      事件监听版本:
+        DOM L0:
+          事件源.on事件 = function(){}
+
+        DOM L2:
+          事件源.addEventListener(事件, 事件处理函数)
+
+      区别:
+        on方式会被覆盖，addEventListener方式可绑定多次，拥有更多特性
+
+    */
+
+    const btn = document.querySelector('button')
+    // btn.onclick = function () {
+    //   alert(11)
+    // }
+    // btn.onclick = function () {
+    //   alert(22)
+    // }
+
+    // let num = 10
+    // num = 20
+    btn.addEventListener('click', function () {
+      alert(11)
+    })
+    btn.addEventListener('click', function () {
+      alert(22)
+    })
+  </script>
+</body>
+```
+
+
+
+#### 108_事件类型-鼠标事件
+
+```js
+<body>
+  <div></div>
+  <script>
+
+    /* 
+      监听事件类型：
+        1. 鼠标事件
+          mouseenter 鼠标移入
+          mouseleave 鼠标移除
+        2. 键盘事件
+          keydown  按键按下
+          keyup    按键抬起
+        3. 焦点事件
+          focus  获得焦点
+          blur   失去焦点
+        4. 表单事件
+          change  内容改变
+          input   输入内容
+    */
+
+    const div = document.querySelector('div')
+    // 鼠标经过
+    div.addEventListener('mouseenter', function () {
+      console.log(`轻轻的我来了`)
+    })
+    // 鼠标离开
+    div.addEventListener('mouseleave', function () {
+      console.log(`轻轻的我走了`)
+    })
+
+  </script>
+</body>
 ```
 

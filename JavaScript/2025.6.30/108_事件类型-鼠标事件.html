@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <script>
+
+    /* 
+      监听事件类型：
+        1. 鼠标事件
+          mouseenter 鼠标移入
+          mouseleave 鼠标移除
+        2. 键盘事件
+          keydown  按键按下
+          keyup    按键抬起
+        3. 焦点事件
+          focus  获得焦点
+          blur   失去焦点
+        4. 表单事件
+          change  内容改变
+          input   输入内容
+    */
+
+    const div = document.querySelector('div')
+    // 鼠标经过
+    div.addEventListener('mouseenter', function () {
+      console.log(`轻轻的我来了`)
+    })
+    // 鼠标离开
+    div.addEventListener('mouseleave', function () {
+      console.log(`轻轻的我走了`)
+    })
+
+  </script>
+</body>
+
+</html>

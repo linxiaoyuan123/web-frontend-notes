@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        .box {
+            width: 600px;
+            margin: 50px auto;
+            display: flex;
+            font-size: 25px;
+            line-height: 40px;
+        }
+
+        .qs {
+
+            width: 450px;
+            height: 40px;
+            color: red;
+
+        }
+
+        .btns {
+            text-align: center;
+        }
+
+        .btns button {
+            width: 120px;
+            height: 35px;
+            margin: 0 50px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>随机点名</h2>
+    <div class="box">
+        <span>名字是：</span>
+        <div class="qs">这里显示姓名</div>
+    </div>
+    <div class="btns">
+        <button class="start">开始</button>
+        <button class="end">结束</button>
+    </div>
+
+    <script>
+
+        // 数据数组
+        const arr = ['马超', '黄忠', '赵云', '关羽', '张飞']
+        // 定义一个定时器的全局变量
+        let timerId = 0
+        // 定义一个随机全局变量
+        let random = 0
+        // 获取显示姓名对象
+        const qs = document.querySelector('.qs')
+        // 获取开始按钮dom对象
+        const start = document.querySelector('.start')
+        // 获取结束按钮dom对象
+        const end = document.querySelector('.end')
+
+      
+
+        //设置开始按钮的监听事件
+        start.addEventListener('click',function(){
+            //点击开始后，定时器开始
+            timerId = setInterval(function(){
+                // 获取随机数
+                random = Math.floor(Math.random() * arr.length)
+                //显示随机名字
+                qs.innerHTML = arr[random]
+
+            }, 10) 
+            start.disabled = true 
+
+            //如果数组就剩一个值，说明已经抽完了，不需要再抽了
+            if(arr.length === 1){   
+                // 禁用开始按钮
+                start.disabled = end.disabled = true
+            }
+        })
+
+        //设置结束按钮的监听事件
+        end.addEventListener('click',function(){
+            //点击结束后，定时器停止
+            clearInterval(timerId)
+            start.disabled = false
+
+            //删除数组中挑选中的人，防止重复抽取
+            arr.splice(random, 1)
+
+        })
+
+
+    </script>
+</body>
+
+</html>

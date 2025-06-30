@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    
+    /* 
+      定时器-间歇函数
+      1.语法：
+        1)开启定时器：
+          setInterval(函数, 间隔时间)
+          函数：要执行的函数，函数名
+          间隔时间：单位是毫秒，1000毫秒=1秒
+
+        2)关闭定时器：
+          let 变量名 = setInterval(函数, 间隔时间)
+          clearInterval(变量名)
+
+      2.作用：
+        可以按照指定的时间间隔，循环执行函数
+
+      3.返回值：(每个定时器都是独一无二的)
+        定时器的编号，是一个数字，从1开始递增，每次增加1
+        可以通过定时器编号来关闭定时器
+        关闭定时器：clearInterval(定时器编号)
+
+      4.注意：
+        1)定时器是异步执行的，会在定时器指定的时间间隔之后才执行
+        (意思我设置1秒，刚打开页面，1秒之后才会开始调用函数，之后重复)
+        2)定时器的时间间隔是按照指定的时间间隔来执行的，不一定准确
+
+      5.作用：
+        可以根据时间自动重复执行某些代码
+      
+    */
+
+    //setInterval(函数, 间隔时间) 第一个参数是函数名，函数()的意思是函数调用
+
+    // setInterval(function(){
+    //   console.log('一秒执行一次')
+    // }, 1000)
+
+    function fn() {
+      console.log('一秒执行一次')
+    }
+
+    setInterval(fn, 1000)
+    //若想加小括号，那么就加引号(只作了解，不使用)
+    //setInterval('fn()', 1000)
+
+    // 定时器编号(用let声明是因为后面利用鼠标悬停关闭定时器，
+    // 之后想让定时器重新动起来值会被赋新值，会变)
+    let num = setInterval(function(){
+      console.log('2秒执行一次')
+    }, 2000)
+    console.log(num)
+    // 关闭定时器
+    clearInterval(num)
+ 
+
+    /* 
+      变量和定时器的一些用法 
+    */
+
+    let i = 1
+    setInterval(function() {
+      i++
+      document.write(`${i} `)
+    }, 100)
+
+  </script>
+</body>
+
+</html>

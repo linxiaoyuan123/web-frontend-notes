@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        
+    </div>
+    <button>确定</button>
+    <script>
+        //获取元素
+        const btn = document.querySelector('button')
+        //定义变量
+        let num = 6
+
+        //设置倒计时
+
+        btn.disabled = true
+
+        let can = setInterval(function() {
+            num--
+            btn.innerHTML = `确定(${num})`
+            if(num === 0) {
+                btn.disabled = false
+                btn.innerHTML = '确定'
+                clearInterval(can)
+            }
+        }, 1000)
+
+    </script>
+</body>
+</html>

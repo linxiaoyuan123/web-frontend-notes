@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: pink;
+    }
+
+    .nav {
+      color: red;
+    }
+
+    .box {
+      width: 300px;
+      height: 300px;
+      background-color: skyblue;
+      margin: 100px auto;
+      padding: 10px;
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="nav">123</div>
+  <script>
+
+    /* 
+    使用场景：如果修改的样式比较多，直接通过style属性修改比较繁琐，可以通过借助于CSS类名的形式。
+    */
+
+
+    // 1. 获取元素
+    const div = document.querySelector('div')
+    // 2.添加类名  class 是个关键字 我们用 className
+    // 注意：使用className赋值会覆盖以前的类名
+    div.className = 'nav box'
+    
+  </script>
+</body>
+
+</html>

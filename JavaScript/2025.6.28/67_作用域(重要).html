@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    /* 
+      作用域：变量起作用的范围
+        1. 全局变量
+        2. 局部变量(函数变量，函数作用域)
+
+      函数的访问原则：在能够访问到的情况下 先局部，局部没有再找全局
+
+
+    */
+
+    let num = 10  // 1. 全局变量
+
+    console.log(num)
+    function fn() {
+      //局部作用域中没有重新声明num，而是直接赋值
+      //此时赋值操作会沿着作用域链向上查找，最终修改全局变量num
+      num = 20
+    }
+    fn()
+    console.log(num)
+
+    // 2. 局部变量
+    function fun() {
+      //局部重新声明了num，只在num中有效
+      //相当在函数作用域里创建了一个新的局部变量num，此时与全局变量num无关
+      let num = 100  
+      console.log(num)
+      //局部声明了个str
+      let str = '老王'
+    }
+    fun()
+    console.log(num)
+    //局部声明的str只能在局部中生效
+    console.log(str)  // 错误
+  </script>
+</body>
+
+</html>
